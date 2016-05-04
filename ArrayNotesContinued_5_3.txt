@@ -1,0 +1,61 @@
+=== CSCI 5_3_2015 Notes ===
+
+In array of [7] (Rows) and [3] (Columns)
+Beginning cell in array[0][0] (0,0)
+Last cell will be one less since 0 counts. (ie array[6][2])
+
+for loop needed to iterate through each dimension.
+2-dimensional array will require 2 for loops, 3 requires 3, etc.
+
+function computes the total of a given row
+
+The function must know at compile time how many columns the two-dimensional array has.
+You must specify the number of columns with the array parameter variable. This number
+must be a constant:
+int row_total(int table[][COLUMNS], int row)
+{
+	int total = 0;
+	for (int j = 0; j < COLUMNS; j++)
+	{
+		total = total + table[row][j];
+	}
+	return total;
+}
+
+Homework CH6: Due Thursday (Both parts). Test thursday.
+
+
+Vectors -- **NOT NEEDED FOR TEST ACCORDING TO PROFESSOR** but super useful for lots of applications.
+Similar to array 
+Array declared a[10]
+
+To declare Vector - MUST call library on top of code file -- " #include <vector> "
+
+"vector<double> v(x);" where x can be a number but can expand or shrink dynamically.
+need to call "v.push_back(element)" to add to end of vector.
+if want to start vector with NOTHING, DO NOT add "()" leave empty as: "vector<int> v;"
+to call size of vector use v.size().
+
+to remove LAST element
+v.pop_back();
+
+no function to add in at specific location
+must be written manually. Or "Google it"
+
+// to manually enter values
+double input;
+while (cin >> input)
+{
+values.push_back(input);
+}
+
+
+values.size() can be used in forloops as the value since vectors can be dynamic.
+for (int = 0; i < values.size(); i++;) etc
+
+sorting with c++ library
+the syntax for vectors is
+sort(vector.begin(), vector.end());
+
+Use arrays for collecting values.
+use vectors for managing collections whose size can change.

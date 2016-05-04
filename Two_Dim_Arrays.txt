@@ -1,0 +1,57 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+
+	const int COUNTRIES = 7;
+	const int MEDALS = 3;
+	int medalCountRow = 0;
+	int medalCountCol = 0;
+
+	int counts[COUNTRIES][MEDALS] =
+	{	{1, 0, 1},
+		{1, 1, 0},
+		{0, 0, 1},
+		{1, 0, 0},
+		{0, 1, 1},
+		{0, 1, 1},
+		{1, 1, 0}	};
+
+	cout << "The array order is as follows: " << endl;
+	for (int c = 0; c < COUNTRIES; c++)
+	{
+		for (int m = 0; m < MEDALS; m++)
+		{
+			cout << counts[c][m] << " ";
+			if (counts[c][m] == 1)
+			{
+				medalCountRow++;
+			}
+		}
+		cout << "Medal Total: " << medalCountRow;
+		medalCountRow = 0;
+		cout << endl;		
+	}
+	cout << endl;
+
+	// reversed for loop
+	for (int n = 0; n < MEDALS; n++)
+	{
+		for (int b = 0; b < COUNTRIES; b++)
+		{
+			if (counts[b][n] == 1)
+			{
+				medalCountCol++;
+			}
+		}
+		cout << "Medals " << medalCountCol << " ";
+		medalCountCol = 0;
+	}
+
+	system("pause");
+	return 0;
+}
+
